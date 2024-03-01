@@ -1,11 +1,10 @@
 import { useRoutes } from "react-router-dom";
-
-import SignUpNew from "../pages/SignUpNew/SignUpNew";
+import ButtonGoogle from "./../Components/Button/ButtonGoogle";
 const useRoutesCustom = () => {
   let element = useRoutes([
     {
       path: "/",
-      element: <SignUpNew />,
+      element: <ButtonGoogle />,
     },
   ]);
 
