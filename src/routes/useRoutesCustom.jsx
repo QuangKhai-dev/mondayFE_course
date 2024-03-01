@@ -1,10 +1,11 @@
-import { useRoutes } from 'react-router-dom';
-import Demo from '../Components/Demo';
+import { useRoutes } from "react-router-dom";
+
+import SignUpNew from "../pages/SignUpNew/SignUpNew";
 const useRoutesCustom = () => {
   let element = useRoutes([
     {
-      path: '/',
-      element: <Demo />,
+      path: "/",
+      element: <SignUpNew />,
     },
   ]);
 
