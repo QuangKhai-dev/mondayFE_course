@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.style_a {
+  @apply text-blue-500 hover:underline;
+}
+
+.signup_title {
+  flex: 0.5 1 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+.signup_action {
+  flex: 1 1 0%;
+  width: 100%;
+}
