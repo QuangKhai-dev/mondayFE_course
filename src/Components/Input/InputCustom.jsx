@@ -9,8 +9,8 @@ const InputCustom = ({
   name,
   error,
   touched,
-  id,
   label,
+  id,
 }) => {
   return (
     <div>
