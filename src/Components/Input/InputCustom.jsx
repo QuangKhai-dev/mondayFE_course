@@ -11,6 +11,11 @@ const InputCustom = ({
 }) => {
   return (
     <div>
+      {label ? (
+        <label className="text-sm mb-2 inline-block" htmlFor={id}>
+          {label}
+        </label>
+      ) : null}
       <input
         onChange={onChange}
         onBlur={onBlur}
