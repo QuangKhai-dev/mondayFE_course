@@ -23,7 +23,13 @@
   width: 100%;
 }
 
-.register_input {
+.register_input,
+.surevey_radio {
   flex: 8 1 0%;
   @apply space-y-8;
+}
+
+.radio_style .ant-radio-wrapper {
+  @apply px-4 py-2 border border-gray-300 rounded-3xl my-2;
+  color: #676879;
 }

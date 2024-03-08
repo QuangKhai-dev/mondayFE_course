@@ -1,12 +1,11 @@
 import { useRoutes } from "react-router-dom";
-
-import SignUpNew from "../pages/SignUpNew/SignUpNew";
 import GetInfoRegister from "../pages/GetInfoRegister/GetInfoRegister";
+import SurveyQuestion from "../pages/SurveyQuestion/SurveyQuestion";
 const useRoutesCustom = () => {
   let element = useRoutes([
     {
       path: "/",
-      element: <GetInfoRegister />,
+      element: <SurveyQuestion />,
     },
   ]);
 
