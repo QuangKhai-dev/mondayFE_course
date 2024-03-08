@@ -10,6 +10,7 @@ const InputCustom = ({
   touched,
   label,
   id,
+  type = "text",
 }) => {
   return (
     <div>
@@ -21,7 +22,7 @@ const InputCustom = ({
       <input
         onChange={onChange}
         onBlur={onBlur}
-        type="text"
+        type={type}
         placeholder={placeholder}
         value={value}
         id={id}
