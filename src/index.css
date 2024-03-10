@@ -24,7 +24,8 @@
 }
 
 .register_input,
-.surevey_radio {
+.surevey_radio,
+.content_field {
   flex: 8 1 0%;
   @apply space-y-8;
 }
@@ -32,4 +33,8 @@
 .radio_style .ant-radio-wrapper {
   @apply px-4 py-2 border border-gray-300 rounded-3xl my-2;
   color: #676879;
+}
+
+.ant-select-dropdown {
+  width: max-content !important;
 }
