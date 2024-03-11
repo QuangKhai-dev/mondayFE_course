@@ -38,3 +38,11 @@
 .ant-select-dropdown {
   width: max-content !important;
 }
+
+.custom_select p {
+  font-weight: 400;
+}
+
+.content_field .ant-space-compact {
+  margin-top: 10px !important;
+}

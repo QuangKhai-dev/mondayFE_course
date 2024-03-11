@@ -1,15 +1,20 @@
+import { useState } from "react";
+import InputDropdown from "../../Components/Input/InputDropdown";
 import inviteMemberImg from "./../../assets/img/Invite-member.avif";
 import miniLogoImg from "./../../assets/img/logoMiniMonday.png";
-import { Space, Select, Input } from "antd";
+
 const InviteMember = () => {
+  const [arrInputInvite, setArrInputInvite] = useState(["admin", "admin"]);
   const options = [
     {
       value: "admin",
       label: "Admin",
+      desc: "Can invite & manage new users",
     },
     {
       value: "member",
       label: "Member",
+      desc: "Can add and edit content",
     },
   ];
   return (
@@ -24,15 +29,25 @@ const InviteMember = () => {
           {/* field  */}
           <div className="content_field">
             <h1 className="text-2xl mb-5">Who else is on your team?</h1>
-            <Space.Compact className="w-full">
-              <Input className="px-3 h-[38px]" placeholder="Add email here" />
-              <Select
-                defaultValue="admin"
-                defaultOpen={true}
-                className="h-[38px]"
-                options={options}
-              />
-            </Space.Compact>
+            {arrInputInvite.map((item, index) => {
+              return (
+                <InputDropdown
+                  key={index}
+                  options={options}
+                  placeholder="Add email here"
+                  defaultValue={item}
+                />
+              );
+            })}
+            <button
+              onClick={() => {
+                const newArrInput = [...arrInputInvite, "admin"];
+                setArrInputInvite(newArrInput);
+              }}
+              className="py-2 px-4 hover:bg-gray-200 rounded"
+            >
+              Add another
+            </button>
           </div>
           {/* action  */}
           <div className="content_action flex justify-between">
