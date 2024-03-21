@@ -1,115 +1,115 @@
-import whatBrings from "./../../assets/img/what-brings.avif";
-import logoMini from "./../../assets/img/logoMiniMonday.png";
-import LayoutRadio from "../../layout/LayoutRadio/LayoutRadio";
-import { useState } from "react";
+import whatBrings from './../../assets/img/what-brings.avif';
+import logoMini from './../../assets/img/logoMiniMonday.png';
+import LayoutRadio from '../../layout/LayoutRadio/LayoutRadio';
+import { useState } from 'react';
 const SurveyQuestion = () => {
-  const [whatBring, setWhatBring] = useState("");
+  const [whatBring, setWhatBring] = useState('');
   let contentWhatBrings = {
-    title: "Hey there, what brings you here today?",
+    title: 'Hey there, what brings you here today?',
     items: [
       {
-        value: "Work",
-        content: "Work",
+        value: 'Work',
+        content: 'Work',
       },
       {
-        value: "Personal",
-        content: "Personal",
+        value: 'Personal',
+        content: 'Personal',
       },
       {
-        value: "School",
-        content: "School",
+        value: 'School',
+        content: 'School',
       },
       {
-        value: "Nonprofits",
-        content: "Nonprofits",
+        value: 'Nonprofits',
+        content: 'Nonprofits',
       },
     ],
   };
   // console.log(whatBring);
-  const handleWhatBring = (event) => {
+  const handleWhatBring = event => {
     setWhatBring(event.target.value);
   };
 
   const renderCurrentRadio = () => {
     let items = [];
     switch (whatBring) {
-      case "Work":
+      case 'Work':
         items = [
           {
-            content: "Business owner",
-            value: "Business owner",
+            content: 'Business owner',
+            value: 'Business owner',
           },
           {
-            content: "Team leader",
-            value: "Team leader",
+            content: 'Team leader',
+            value: 'Team leader',
           },
           {
-            content: "Team member",
-            value: "Team member",
+            content: 'Team member',
+            value: 'Team member',
           },
           {
-            content: "Freelancer",
-            value: "Freelancer",
+            content: 'Freelancer',
+            value: 'Freelancer',
           },
           {
-            content: "Director",
-            value: "Director",
+            content: 'Director',
+            value: 'Director',
           },
           {
-            content: "C-Level",
-            value: "C-Level",
+            content: 'C-Level',
+            value: 'C-Level',
           },
           {
-            content: "VP",
-            value: "VP",
+            content: 'VP',
+            value: 'VP',
           },
         ];
         break;
-      case "School":
+      case 'School':
         items = [
           {
-            content: "Undergraduate student",
-            value: "Undergraduate student",
+            content: 'Undergraduate student',
+            value: 'Undergraduate student',
           },
           {
-            content: "Graduate student",
-            value: "Graduate student",
+            content: 'Graduate student',
+            value: 'Graduate student',
           },
           {
-            content: "Faculty member",
-            value: "Faculty member",
+            content: 'Faculty member',
+            value: 'Faculty member',
           },
           {
-            content: "Other",
-            value: "Other",
+            content: 'Other',
+            value: 'Other',
           },
         ];
         break;
-      case "Nonprofits":
+      case 'Nonprofits':
         items = [
           {
-            content: "Board member",
-            value: "Board member",
+            content: 'Board member',
+            value: 'Board member',
           },
           {
-            content: "Executive",
-            value: "Executive",
+            content: 'Executive',
+            value: 'Executive',
           },
           {
-            content: "Employee",
-            value: "Employee",
+            content: 'Employee',
+            value: 'Employee',
           },
           {
-            content: "Volunteer",
-            value: "Volunteer",
+            content: 'Volunteer',
+            value: 'Volunteer',
           },
           {
-            content: "IT staff",
-            value: "IT staff",
+            content: 'IT staff',
+            value: 'IT staff',
           },
           {
-            content: "Other",
-            value: "Other",
+            content: 'Other',
+            value: 'Other',
           },
         ];
         break;
