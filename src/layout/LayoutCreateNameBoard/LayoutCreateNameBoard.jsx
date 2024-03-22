@@ -1,4 +1,5 @@
 import React from 'react';
+import InputReset from '../../Components/Input/InputReset';
 
 const LayoutCreateNameBoard = ({ handleStep }) => {
   return (
@@ -10,16 +11,7 @@ const LayoutCreateNameBoard = ({ handleStep }) => {
         roadmap...
       </p>
       {/* input  */}
-      <div className="px-5 py-2 border border-gray-300 rounded relative hover:border-black duration-500 mb-10">
-        <input
-          className="focus:outline-none"
-          type="text"
-          placeholder="My First Board"
-        />
-        <button className="absolute right-2 top-1/2 -translate-y-1/2 h-3/4 w-7 rounded hover:bg-slate-200">
-          X
-        </button>
-      </div>
+      <InputReset placeholder="My first board" />
       {/* description  */}
       <div className="bg-slate-100 p-5 rounded-md text-[15px]">
         <p>

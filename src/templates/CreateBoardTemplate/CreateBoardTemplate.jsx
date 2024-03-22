@@ -26,9 +26,22 @@ const CreateBoardTemplate = () => {
           <img className="h-6 " src={logoMiniCreateBoard} alt="" />
         </div>
         {renderCreateBoard()}
-        <div>
-          <button>Back</button>
-          <button>Next</button>
+        <div className="mt-20 flex justify-between w-full">
+          {step !== 0 ? (
+            <button className="py-2 px-4 rounded border border-gray-300">
+              Back
+            </button>
+          ) : (
+            <div></div>
+          )}
+          <button
+            onClick={() => {
+              setStep(step + 1);
+            }}
+            className="py-2 px-4 text-white bg-blue-500 rounded"
+          >
+            Next<i className="fa-solid fa-angle-right ml-2"></i>
+          </button>
         </div>
       </div>
       {/* view board  */}
