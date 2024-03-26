@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LayoutCreateNameBoard from '../../layout/LayoutCreateNameBoard/LayoutCreateNameBoard';
 import LayoutCreateColumnBoard from '../../layout/LayoutCreateColumnBoard/LayoutCreateColumnBoard';
 import logoMiniCreateBoard from './../../assets/img/logoMiniCreateBoard.png';
+import LayoutViewBoardDemo from '../../layout/LayoutViewBoardDemo/LayoutViewBoardDemo';
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
   const handleStep = number => {
@@ -45,7 +46,9 @@ const CreateBoardTemplate = () => {
         </div>
       </div>
       {/* view board  */}
-      <div className="w-1/2 bg-orange-500"></div>
+      <div className="w-1/2 bg-orange-500 flex items-center justify-end">
+        <LayoutViewBoardDemo />
+      </div>
     </div>
   );
 };
