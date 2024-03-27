@@ -1,7 +1,12 @@
 import React from 'react';
 import InputReset from '../../Components/Input/InputReset';
 
-const LayoutCreateNameBoard = ({ handleStep }) => {
+const LayoutCreateNameBoard = ({
+  handleStep,
+  handleChangeNameBoard,
+  handelResetNameBoard,
+  nameBoard,
+}) => {
   return (
     <div className="text-title">
       {/* title  */}
@@ -11,7 +16,12 @@ const LayoutCreateNameBoard = ({ handleStep }) => {
         roadmap...
       </p>
       {/* input  */}
-      <InputReset placeholder="My first board" />
+      <InputReset
+        handleChange={handleChangeNameBoard}
+        handleClick={handelResetNameBoard}
+        placeholder="My first board"
+        value={nameBoard}
+      />
       {/* description  */}
       <div className="bg-slate-100 p-5 rounded-md text-[15px]">
         <p>

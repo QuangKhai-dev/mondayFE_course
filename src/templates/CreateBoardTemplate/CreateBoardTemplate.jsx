@@ -6,15 +6,35 @@ import LayoutViewBoardDemo from '../../layout/LayoutViewBoardDemo/LayoutViewBoar
 import ButtonCustom from '../../Components/Button/ButtonCustom';
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
+  const [nameBoard, setNameBoard] = useState('');
   const handleStep = number => {
     // -1
     // 1
     setStep(step + number);
   };
+
+  // handleChangeNameBoard
+  const handleChangeNameBoard = event => {
+    // event.target.value
+    setNameBoard(event.target.value);
+  };
+
+  // handleResetNameBoard
+  const handelResetNameBoard = () => {
+    setNameBoard('');
+  };
+
   const renderCreateBoard = () => {
     switch (step) {
       case 0:
-        return <LayoutCreateNameBoard handleStep={handleStep} />;
+        return (
+          <LayoutCreateNameBoard
+            nameBoard={nameBoard}
+            handleChangeNameBoard={handleChangeNameBoard}
+            handelResetNameBoard={handelResetNameBoard}
+            handleStep={handleStep}
+          />
+        );
       case 1:
         return <LayoutCreateColumnBoard />;
     }
@@ -68,7 +88,7 @@ const CreateBoardTemplate = () => {
       </div>
       {/* view board  */}
       <div className="w-1/2 bg-orange-500 flex items-center justify-end">
-        <LayoutViewBoardDemo />
+        <LayoutViewBoardDemo nameBoard={nameBoard} />
       </div>
     </div>
   );
