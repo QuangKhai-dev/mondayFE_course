@@ -31,7 +31,7 @@ const LayoutViewBoardDemo = ({ nameBoard }) => {
       {/* table 1  */}
       <TableBoardDemo data={data} />
       {/* table 2  */}
-      <TableBoardDemo data={data} className="border_board_green" />
+      {/* <TableBoardDemo data={data} className="border_board_green" /> */}
     </div>
   );
 };
