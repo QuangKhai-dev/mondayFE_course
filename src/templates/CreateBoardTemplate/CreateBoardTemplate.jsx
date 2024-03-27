@@ -3,6 +3,7 @@ import LayoutCreateNameBoard from '../../layout/LayoutCreateNameBoard/LayoutCrea
 import LayoutCreateColumnBoard from '../../layout/LayoutCreateColumnBoard/LayoutCreateColumnBoard';
 import logoMiniCreateBoard from './../../assets/img/logoMiniCreateBoard.png';
 import LayoutViewBoardDemo from '../../layout/LayoutViewBoardDemo/LayoutViewBoardDemo';
+import ButtonCustom from '../../Components/Button/ButtonCustom';
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
   const handleStep = number => {
@@ -18,6 +19,11 @@ const CreateBoardTemplate = () => {
         return <LayoutCreateColumnBoard />;
     }
   };
+
+  const handleNextStep = number => {
+    setStep(step + number);
+  };
+
   return (
     <div className="h-screen flex">
       {/* content board  */}
@@ -29,20 +35,35 @@ const CreateBoardTemplate = () => {
         {renderCreateBoard()}
         <div className="mt-20 flex justify-between w-full">
           {step !== 0 ? (
-            <button className="py-2 px-4 rounded border border-gray-300">
-              Back
-            </button>
+            <ButtonCustom
+              content={
+                <>
+                  <i className="fa-solid fa-angle-left mr-2"></i>
+                  <span>Back </span>
+                </>
+              }
+              styleButton="border-gray-300 border"
+              className={'w-max'}
+              onClick={() => {
+                handleNextStep(-1);
+              }}
+            />
           ) : (
             <div></div>
           )}
-          <button
+
+          <ButtonCustom
+            content={
+              <>
+                <span>Next</span>
+                <i className="fa-solid fa-angle-right ml-2"></i>
+              </>
+            }
             onClick={() => {
-              setStep(step + 1);
+              handleNextStep(1);
             }}
-            className="py-2 px-4 text-white bg-blue-500 rounded"
-          >
-            Next<i className="fa-solid fa-angle-right ml-2"></i>
-          </button>
+            className={'w-max'}
+          />
         </div>
       </div>
       {/* view board  */}
