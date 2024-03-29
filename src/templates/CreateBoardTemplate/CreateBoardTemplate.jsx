@@ -7,6 +7,7 @@ import ButtonCustom from '../../Components/Button/ButtonCustom';
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
   const [nameBoard, setNameBoard] = useState('');
+  const [arrColumn, setArrColumn] = useState([]);
   const handleStep = number => {
     // -1
     // 1
@@ -24,19 +25,30 @@ const CreateBoardTemplate = () => {
     setNameBoard('');
   };
 
+  // handleChangeArrColumn
+  const handleChangeArrColumn = checkedValue => {
+    console.log(checkedValue);
+  };
+
   const renderCreateBoard = () => {
     switch (step) {
+      // case 0:
+      //   return (
+      //     <LayoutCreateNameBoard
+      //       nameBoard={nameBoard}
+      //       handleChangeNameBoard={handleChangeNameBoard}
+      //       handelResetNameBoard={handelResetNameBoard}
+      //       handleStep={handleStep}
+      //     />
+      //   );
+      // case 1:
+      //   <div></div>;
       case 0:
         return (
-          <LayoutCreateNameBoard
-            nameBoard={nameBoard}
-            handleChangeNameBoard={handleChangeNameBoard}
-            handelResetNameBoard={handelResetNameBoard}
-            handleStep={handleStep}
+          <LayoutCreateColumnBoard
+            handleChangeArrColumn={handleChangeArrColumn}
           />
         );
-      case 1:
-        return <LayoutCreateColumnBoard />;
     }
   };
 

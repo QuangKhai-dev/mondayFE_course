@@ -1,6 +1,6 @@
 import { Table } from 'antd';
 import React from 'react';
-
+import './tableBoardDemo.scss';
 const TableBoardDemo = ({ data, className }) => {
   let shapeObject = 'bg-gray-300 w-full h-1 rounded-md';
   const columns = [
@@ -8,16 +8,22 @@ const TableBoardDemo = ({ data, className }) => {
       title: <div className={shapeObject}></div>,
       dataIndex: 'name',
       key: 'name',
-      render: () => {
+      render: text => {
         return <div className={shapeObject}></div>;
       },
     },
     {
       title: <div className={shapeObject}></div>,
-      dataIndex: 'name',
-      key: 'name',
-      render: text => {
-        return text && <div className={shapeObject}></div>;
+      dataIndex: 'status',
+      key: 'status',
+      render: (text, record, index) => {
+        return text ? (
+          text
+        ) : index == 2 ? (
+          ''
+        ) : (
+          <div className={shapeObject}></div>
+        );
       },
     },
     {

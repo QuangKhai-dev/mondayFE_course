@@ -1,0 +1,32 @@
+.layout_create_column {
+  .ant-checkbox-wrapper {
+    @apply py-2 px-3 border border-gray-300 rounded-3xl my-2;
+
+    &::after {
+      display: none;
+    }
+
+    .ant-checkbox {
+      display: none;
+    }
+
+    span {
+      div {
+        @apply flex items-center;
+
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    &.ant-checkbox-wrapper-checked {
+      @apply border-green-600 border-2;
+    }
+
+    &.ant-checkbox-wrapper-disabled {
+      @apply border-none bg-gray-200;
+    }
+  }
+
+}
