@@ -1,8 +1,9 @@
-import { useRoutes } from "react-router-dom";
-import GetInfoRegister from "../pages/GetInfoRegister/GetInfoRegister";
-import SurveyQuestion from "../pages/SurveyQuestion/SurveyQuestion";
-import InviteMember from "../pages/InviteMember/InviteMember";
-import CreateBoardTemplate from "../templates/CreateBoardTemplate/CreateBoardTemplate";
+import { useRoutes } from 'react-router-dom';
+import GetInfoRegister from '../pages/GetInfoRegister/GetInfoRegister';
+import SurveyQuestion from '../pages/SurveyQuestion/SurveyQuestion';
+import InviteMember from '../pages/InviteMember/InviteMember';
+import CreateBoardTemplate from '../templates/CreateBoardTemplate/CreateBoardTemplate';
+import HomeTemplate from '../templates/HomeTemplate/HomeTemplate';
 const useRoutesCustom = () => {
   let element = useRoutes([
     // {
@@ -10,8 +11,8 @@ const useRoutesCustom = () => {
     //   element: <InviteMember />,
     // },
     {
-      path: "/",
-      element: <CreateBoardTemplate />,
+      path: '/',
+      element: <HomeTemplate />,
     },
   ]);
 
