@@ -7,6 +7,8 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import SideBar from './Layout/SideBar/SideBar';
+
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
   return {
@@ -50,24 +52,7 @@ const HomeTemplate = () => {
       />
 
       <Layout style={{ background: '#ECEFF8' }}>
-        <Sider
-          collapsible
-          collapsed={collapsed}
-          onCollapse={value => setCollapsed(value)}
-          style={{
-            background: 'white',
-            borderTopRightRadius: '8px',
-          }}
-          width="15%"
-        >
-          <div className="demo-logo-vertical" />
-          {/* <Menu
-            theme="dark"
-            defaultSelectedKeys={['1']}
-            mode="inline"
-            items={items}
-          /> */}
-        </Sider>
+        <SideBar collapsed={collapsed} setCollapsed={setCollapsed} />
         <Content
           style={{
             margin: '0 16px',

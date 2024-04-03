@@ -1,0 +1,28 @@
+.side_bar {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  .ant-layout-sider-trigger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 8px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    opacity: 0;
+    background-color: #F0F0F1;
+    color: black;
+  }
+
+  &:hover {
+    .ant-layout-sider-trigger {
+      opacity: 1;
+    }
+  }
+
+  &.ant-layout-sider-collapsed {
+    .ant-layout-sider-trigger {
+      opacity: 1;
+    }
+  }
+}
