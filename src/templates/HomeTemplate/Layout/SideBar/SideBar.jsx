@@ -7,6 +7,7 @@ import IconMyWork from '../../../../Components/Icon/IconMyWork';
 import IconHomeBold from '../../../../Components/Icon/IconHomeBold';
 import InputFilter from '../../../../Components/Input/InputFilter';
 import ButtonCustom from '../../../../Components/Button/ButtonCustom';
+import BoardItem from '../../../../Components/BoardItem/BoardItem';
 const { Sider } = Layout;
 const content = (
   <div>
@@ -97,6 +98,12 @@ const SideBar = ({ collapsed, setCollapsed }) => {
             className="w-10 px-2"
             content={<i className="fa-solid fa-plus"></i>}
           />
+        </div>
+        {/* list board  */}
+        <div className="space-y-2">
+          <BoardItem />
+          <BoardItem />
+          <BoardItem />
         </div>
       </div>
     </Sider>
