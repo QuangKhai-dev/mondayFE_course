@@ -17,8 +17,9 @@ const BoardItem = () => {
         setActive(!active);
       }}
       onBlur={() => {
-        console.log('hello');
+        setActive(false);
       }}
+      tabIndex={-1}
     >
       <div>
         <IconBoard />
@@ -33,7 +34,12 @@ const BoardItem = () => {
           title="Title"
           trigger={['click']}
         >
-          <button className="py-1 px-2 bg-gray-300 rounded opacity-0 group-hover:opacity-100 relative z-10">
+          <button
+            onClick={() => {
+              setActive(!active);
+            }}
+            className="py-1 px-2 bg-gray-300 rounded opacity-0 group-hover:opacity-100"
+          >
             <i className="fa-solid fa-ellipsis"></i>
           </button>
         </Popover>

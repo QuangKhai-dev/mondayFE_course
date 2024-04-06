@@ -93,9 +93,9 @@ const SideBar = ({ collapsed, setCollapsed }) => {
         </div>
         {/* input filter & button create board  */}
         <div className="flex justify-between space-x-2">
-          <InputFilter />
+          <InputFilter className="w-10/12" />
           <ButtonCustom
-            className="w-10 px-2"
+            className="w-2/12 !px-2"
             content={<i className="fa-solid fa-plus"></i>}
           />
         </div>
