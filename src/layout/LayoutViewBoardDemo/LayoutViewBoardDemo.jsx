@@ -2,7 +2,9 @@ import { Space, Table, Tag } from 'antd';
 import React from 'react';
 import './layoutViewBoardDemo.scss';
 import TableBoardDemo from '../../Components/TableBoardDemo/TableBoardDemo';
-const LayoutViewBoardDemo = ({ nameBoard }) => {
+import { useSelector } from 'react-redux';
+const LayoutViewBoardDemo = () => {
+  const { board } = useSelector(state => state.createBoardSlice);
   const data = [
     {
       name: '123',
@@ -32,8 +34,8 @@ const LayoutViewBoardDemo = ({ nameBoard }) => {
       {/* title  */}
       <div className="board_demo_title mb-20">
         {/* Kiểm tra nếu dữ liệu khác rỗng sẽ hiển thị còn nếu không sẽ hiển thị thanh xám */}
-        {nameBoard ? (
-          <p>{nameBoard}</p>
+        {board.name ? (
+          <p>{board.name}</p>
         ) : (
           <div className="bg-gray-300 w-52 h-2 rounded-md"></div>
         )}

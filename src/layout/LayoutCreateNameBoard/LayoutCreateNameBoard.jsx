@@ -1,12 +1,10 @@
 import React from 'react';
 import InputReset from '../../Components/Input/InputReset';
-
-const LayoutCreateNameBoard = ({
-  handleStep,
-  handleChangeNameBoard,
-  handelResetNameBoard,
-  nameBoard,
-}) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { handleChangeNameBoard } from '../../redux/createBoardSlice/createBoardSlice';
+const LayoutCreateNameBoard = ({ handleStep, handelResetNameBoard }) => {
+  const { board } = useSelector(state => state.createBoardSlice);
+  const dispatch = useDispatch();
   return (
     <div className="text-title">
       {/* title  */}
@@ -17,10 +15,14 @@ const LayoutCreateNameBoard = ({
       </p>
       {/* input  */}
       <InputReset
-        handleChange={handleChangeNameBoard}
-        handleClick={handelResetNameBoard}
+        handleChange={event => {
+          dispatch(handleChangeNameBoard(event.target.value));
+        }}
+        handleClick={() => {
+          dispatch(handleChangeNameBoard(''));
+        }}
         placeholder="My first board"
-        value={nameBoard}
+        value={board.name}
       />
       {/* description  */}
       <div className="bg-slate-100 p-5 rounded-md text-[15px]">

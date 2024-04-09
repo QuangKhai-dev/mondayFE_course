@@ -7,23 +7,12 @@ import ButtonCustom from '../../Components/Button/ButtonCustom';
 import LayoutSelectViewBoard from '../../layout/LayoutSelectViewBoard/LayoutSelectViewBoard';
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
-  const [nameBoard, setNameBoard] = useState('');
+
   const [arrColumn, setArrColumn] = useState([]);
   const handleStep = number => {
     // -1
     // 1
     setStep(step + number);
-  };
-
-  // handleChangeNameBoard
-  const handleChangeNameBoard = event => {
-    // event.target.value
-    setNameBoard(event.target.value);
-  };
-
-  // handleResetNameBoard
-  const handelResetNameBoard = () => {
-    setNameBoard('');
   };
 
   // handleChangeArrColumn
@@ -33,15 +22,8 @@ const CreateBoardTemplate = () => {
 
   const renderCreateBoard = () => {
     switch (step) {
-      // case 0:
-      //   return (
-      //     <LayoutCreateNameBoard
-      //       nameBoard={nameBoard}
-      //       handleChangeNameBoard={handleChangeNameBoard}
-      //       handelResetNameBoard={handelResetNameBoard}
-      //       handleStep={handleStep}
-      //     />
-      //   );
+      case 0:
+        return <LayoutCreateNameBoard handleStep={handleStep} />;
       // case 1:
       //   <div></div>;
       // case 0:
@@ -50,8 +32,8 @@ const CreateBoardTemplate = () => {
       //       handleChangeArrColumn={handleChangeArrColumn}
       //     />
       //   );
-      case 0:
-        return <LayoutSelectViewBoard />;
+      // case 0:
+      //   return <LayoutSelectViewBoard />;
     }
   };
 
@@ -103,7 +85,7 @@ const CreateBoardTemplate = () => {
       </div>
       {/* view board  */}
       <div className="w-1/2 bg-orange-500 flex items-center justify-end">
-        <LayoutViewBoardDemo nameBoard={nameBoard} />
+        <LayoutViewBoardDemo />
       </div>
     </div>
   );
