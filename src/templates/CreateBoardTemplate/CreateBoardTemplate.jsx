@@ -4,6 +4,7 @@ import LayoutCreateColumnBoard from '../../layout/LayoutCreateColumnBoard/Layout
 import logoMiniCreateBoard from './../../assets/img/logoMiniCreateBoard.png';
 import LayoutViewBoardDemo from '../../layout/LayoutViewBoardDemo/LayoutViewBoardDemo';
 import ButtonCustom from '../../Components/Button/ButtonCustom';
+import LayoutSelectViewBoard from '../../layout/LayoutSelectViewBoard/LayoutSelectViewBoard';
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
   const [nameBoard, setNameBoard] = useState('');
@@ -43,12 +44,14 @@ const CreateBoardTemplate = () => {
       //   );
       // case 1:
       //   <div></div>;
+      // case 0:
+      //   return (
+      //     <LayoutCreateColumnBoard
+      //       handleChangeArrColumn={handleChangeArrColumn}
+      //     />
+      //   );
       case 0:
-        return (
-          <LayoutCreateColumnBoard
-            handleChangeArrColumn={handleChangeArrColumn}
-          />
-        );
+        return <LayoutSelectViewBoard />;
     }
   };
 

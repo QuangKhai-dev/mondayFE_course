@@ -1,0 +1,19 @@
+.layout_select_view {
+  @apply space-y-3;
+
+  .ant-radio-wrapper {
+    @apply border border-gray-400 py-2 rounded;
+
+    .ant-radio {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &.ant-radio-wrapper-checked {
+      @apply border-2 border-blue-500;
+    }
+  }
+}

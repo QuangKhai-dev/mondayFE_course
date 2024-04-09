@@ -12,7 +12,7 @@ const useRoutesCustom = () => {
     // },
     {
       path: '/',
-      element: <HomeTemplate />,
+      element: <CreateBoardTemplate />,
     },
   ]);
 
