@@ -1,4 +1,10 @@
 .board_demo_table {
+  thead {
+    th {
+      width: max-content;
+    }
+  }
+
   tbody {
     tr:first-child {
       td:nth-child(2) {

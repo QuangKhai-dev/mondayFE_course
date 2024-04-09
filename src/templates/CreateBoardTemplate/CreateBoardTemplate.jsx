@@ -8,7 +8,7 @@ import LayoutSelectViewBoard from '../../layout/LayoutSelectViewBoard/LayoutSele
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
 
-  const [arrColumn, setArrColumn] = useState([]);
+  const [arrColumn, setArrColumn] = useState(['Status']);
   const handleStep = number => {
     // -1
     // 1
@@ -17,21 +17,22 @@ const CreateBoardTemplate = () => {
 
   // handleChangeArrColumn
   const handleChangeArrColumn = checkedValue => {
-    console.log(checkedValue);
+    setArrColumn(checkedValue);
   };
 
   const renderCreateBoard = () => {
     switch (step) {
-      case 0:
-        return <LayoutCreateNameBoard handleStep={handleStep} />;
+      // case 0:
+      //   return <LayoutCreateNameBoard handleStep={handleStep} />;
       // case 1:
       //   <div></div>;
-      // case 0:
-      //   return (
-      //     <LayoutCreateColumnBoard
-      //       handleChangeArrColumn={handleChangeArrColumn}
-      //     />
-      //   );
+      case 0:
+        return (
+          <LayoutCreateColumnBoard
+            handleChangeArrColumn={handleChangeArrColumn}
+            arrColumn={arrColumn}
+          />
+        );
       // case 0:
       //   return <LayoutSelectViewBoard />;
     }
@@ -85,7 +86,7 @@ const CreateBoardTemplate = () => {
       </div>
       {/* view board  */}
       <div className="w-1/2 bg-orange-500 flex items-center justify-end">
-        <LayoutViewBoardDemo />
+        <LayoutViewBoardDemo arrColumn={arrColumn} />
       </div>
     </div>
   );

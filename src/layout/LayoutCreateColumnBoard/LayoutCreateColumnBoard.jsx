@@ -7,18 +7,8 @@ import IconEpic from '../../Components/Icon/IconEpic';
 import IconEstimated from '../../Components/Icon/IconEstimated';
 import IconId from '../../Components/Icon/IconId';
 import './layoutCreateColumnBoard.scss';
-const LayoutCreateColumnBoard = ({ handleChangeArrColumn }) => {
+const LayoutCreateColumnBoard = ({ handleChangeArrColumn, arrColumn }) => {
   const options = [
-    {
-      label: (
-        <div>
-          <IconStatus />
-          <span>Status</span>
-        </div>
-      ),
-      value: 'Status',
-      disabled: true,
-    },
     {
       label: (
         <div>
@@ -31,29 +21,32 @@ const LayoutCreateColumnBoard = ({ handleChangeArrColumn }) => {
     {
       label: (
         <div>
-          <IconUplan />
-          <span>Unplanned?</span>
+          <IconStatus />
+          <span>Status</span>
         </div>
       ),
-      value: 'Unplanned?',
+      value: 'Status',
+      // disabled: true,
     },
     {
       label: (
         <div>
-          <IconEpic />
-          <span>Epics</span>
+          <IconStatus />
+          <span>Due Date</span>
         </div>
       ),
-      value: 'Epics',
+      value: 'Due Date',
+      // disabled: true,
     },
     {
       label: (
         <div>
-          <IconEstimated />
-          <span>Estimated SP</span>
+          <IconStatus />
+          <span>Budget</span>
         </div>
       ),
-      value: 'Estimated SP',
+      value: 'Budget',
+      // disabled: true,
     },
     {
       label: (
@@ -67,20 +60,38 @@ const LayoutCreateColumnBoard = ({ handleChangeArrColumn }) => {
     {
       label: (
         <div>
-          <IconId />
-          <span>Item ID</span>
+          <IconStatus />
+          <span>Last updated</span>
         </div>
       ),
-      value: 'Item ID',
+      value: 'Last updated',
     },
     {
       label: (
         <div>
           <IconStatus />
-          <span>Type</span>
+          <span>Files</span>
         </div>
       ),
-      value: 'Type',
+      value: 'Files',
+    },
+    {
+      label: (
+        <div>
+          <IconStatus />
+          <span>Notes</span>
+        </div>
+      ),
+      value: 'Notes',
+    },
+    {
+      label: (
+        <div>
+          <IconStatus />
+          <span>Time line</span>
+        </div>
+      ),
+      value: 'Time line',
     },
   ];
   return (
@@ -95,7 +106,7 @@ const LayoutCreateColumnBoard = ({ handleChangeArrColumn }) => {
       <div>
         <Checkbox.Group
           onChange={handleChangeArrColumn}
-          defaultValue={['Status']}
+          defaultValue={arrColumn}
           options={options}
         />
       </div>

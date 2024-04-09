@@ -3,7 +3,7 @@ import React from 'react';
 import './layoutViewBoardDemo.scss';
 import TableBoardDemo from '../../Components/TableBoardDemo/TableBoardDemo';
 import { useSelector } from 'react-redux';
-const LayoutViewBoardDemo = () => {
+const LayoutViewBoardDemo = ({ arrColumn }) => {
   const { board } = useSelector(state => state.createBoardSlice);
   const data = [
     {
@@ -19,16 +19,16 @@ const LayoutViewBoardDemo = () => {
       name: '',
     },
   ];
-  const dataDemoTable = [
-    {
-      name: 'abc',
-      status: 'In Progress',
-    },
-    {
-      status: 'Ready to start',
-    },
-    {},
-  ];
+  // const dataDemoTable = [
+  //   {
+  //     name: 'abc',
+  //     status: 'In Progress',
+  //   },
+  //   {
+  //     status: 'Ready to start',
+  //   },
+  //   {},
+  // ];
   return (
     <div className="bg-white w-11/12 p-10 pr-0 layout_board_demo">
       {/* title  */}
@@ -41,7 +41,7 @@ const LayoutViewBoardDemo = () => {
         )}
       </div>
       {/* table 1  */}
-      <TableBoardDemo data={dataDemoTable} />
+      <TableBoardDemo />
       {/* table 2  */}
       {/* <TableBoardDemo data={data} className="border_board_green" /> */}
     </div>
