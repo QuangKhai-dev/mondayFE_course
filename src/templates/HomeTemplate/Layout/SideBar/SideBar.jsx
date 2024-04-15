@@ -8,6 +8,7 @@ import IconHomeBold from '../../../../Components/Icon/IconHomeBold';
 import InputFilter from '../../../../Components/Input/InputFilter';
 import ButtonCustom from '../../../../Components/Button/ButtonCustom';
 import BoardItem from '../../../../Components/BoardItem/BoardItem';
+import PopoverListWorkSpace from '../../../../Components/Popover/PopoverListWorkSpace';
 const { Sider } = Layout;
 const content = (
   <div>
@@ -64,8 +65,7 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               console.log('oke');
               setActiveWorkSpace(!activeWorkSpace);
             }}
-            content={content}
-            title="Title"
+            content={<PopoverListWorkSpace />}
             trigger="click"
           >
             <button className="flex justify-between flex-1 space-x-2 items-center p-2 hover:bg-gray-200 rounded">

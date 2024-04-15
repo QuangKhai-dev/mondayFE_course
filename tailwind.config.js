@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         title: '#323338',
+        content: '#676879',
       },
     },
   },
