@@ -26,8 +26,58 @@
 
 .ant-menu-submenu {
   .ant-menu-item {
-    height: 35px !important;
+    // height: 35px !important;
+    height: unset !important;
     line-height: 35px !important;
     @apply flex items-center space-x-2;
+
+    .radio_group_color {
+      @apply grid grid-cols-8;
+
+      .ant-radio-wrapper {
+
+        .ant-radio {
+          display: none;
+        }
+
+        span:last-child {
+          padding-inline-start: 0;
+          padding-inline-end: 0;
+        }
+
+        .relative {
+          div:first-child {
+            opacity: 0;
+          }
+
+          .icon_check {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            svg {
+              width: 10px;
+              height: 10px;
+              opacity: 0;
+            }
+          }
+        }
+
+        &.ant-radio-wrapper-checked {
+          .relative {
+            div:first-child {
+              opacity: 1;
+
+
+            }
+
+            svg {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 }
