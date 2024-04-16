@@ -9,6 +9,7 @@ import InputFilter from '../../../../Components/Input/InputFilter';
 import ButtonCustom from '../../../../Components/Button/ButtonCustom';
 import BoardItem from '../../../../Components/BoardItem/BoardItem';
 import PopoverListWorkSpace from '../../../../Components/Popover/PopoverListWorkSpace';
+import PopoverSettingWorkSpace from '../../../../Components/Popover/PopoverSettingWorkSpace/PopoverSettingWorkSpace';
 const { Sider } = Layout;
 const content = (
   <div>
@@ -85,7 +86,12 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               </div>
             </button>
           </Popover>
-          <Popover content={content} title="Title" trigger="click">
+          <Popover
+            overlayInnerStyle={{ padding: '0' }}
+            arrow={false}
+            content={<PopoverSettingWorkSpace />}
+            trigger="click"
+          >
             <button className="h-10 px-3 hover:bg-gray-200 rounded-md block">
               <i className="fa-solid fa-ellipsis"></i>
             </button>

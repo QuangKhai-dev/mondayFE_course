@@ -1,0 +1,33 @@
+.popover_setting_workspace {
+  .ant-menu {
+    border-inline-end: none !important;
+    border-radius: 8px;
+
+    .ant-menu-item {
+      display: flex;
+      align-items: center;
+      height: 35px;
+      line-height: 35px;
+      @apply space-x-2;
+    }
+
+    .ant-menu-submenu {
+      .ant-menu-submenu-title {
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+.ant-menu-submenu {
+  .ant-menu-item {
+    height: 35px !important;
+    line-height: 35px !important;
+    @apply flex items-center space-x-2;
+  }
+}
