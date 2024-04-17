@@ -71,13 +71,13 @@ const PopoverSettingWorkSpace = () => {
                     label: (
                       <div className="relative">
                         <div
-                          className="w-6 h-6 rounded-full p-0.5 flex items-center justify-center"
+                          className="w-8 h-8 rounded-full p-0.5 flex items-center justify-center"
                           style={{
                             border: `1px solid ${item.color}`,
                           }}
                         ></div>
                         <div
-                          className="w-4 h-4 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                          className="w-6 h-6 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                           style={{ backgroundColor: item.color }}
                         ></div>
                         <span className="icon_check">
@@ -91,6 +91,43 @@ const PopoverSettingWorkSpace = () => {
               ></Radio.Group>
             </div>
           ),
+          key: 'a',
+          type: 'group',
+        },
+        {
+          label: (
+            <div>
+              <p>Icon</p>
+              <Radio.Group
+                // defaultValue={['#1d1f39']}
+                // value={'#1d1f39'}
+                className="radio_group_color"
+                options={arrColorSelect.map((item, index) => {
+                  return {
+                    label: (
+                      <div className="relative">
+                        <div
+                          className="w-8 h-8 rounded-full p-0.5 flex items-center justify-center"
+                          style={{
+                            border: `1px solid ${item.color}`,
+                          }}
+                        ></div>
+                        <div
+                          className="w-6 h-6 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                          style={{ backgroundColor: item.color }}
+                        ></div>
+                        <span className="icon_check">
+                          <IconCheck />
+                        </span>
+                      </div>
+                    ),
+                    value: item.color,
+                  };
+                })}
+              ></Radio.Group>
+            </div>
+          ),
+          type: 'group',
         },
       ],
     },
@@ -147,7 +184,7 @@ const PopoverSettingWorkSpace = () => {
   return (
     <div className="popover_setting_workspace">
       <Menu
-        defaultOpenKeys={['1']}
+        defaultOpenKeys={['1', 'a']}
         mode="vertical"
         items={arrSettingWorkSpace}
       />

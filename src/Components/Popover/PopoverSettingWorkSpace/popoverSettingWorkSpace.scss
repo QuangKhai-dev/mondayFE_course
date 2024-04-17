@@ -25,10 +25,11 @@
 }
 
 .ant-menu-submenu {
-  .ant-menu-item {
+  .ant-menu {
     // height: 35px !important;
     height: unset !important;
     line-height: 35px !important;
+    flex-direction: column;
     @apply flex items-center space-x-2;
 
     .radio_group_color {
@@ -37,7 +38,14 @@
       .ant-radio-wrapper {
 
         .ant-radio {
+          opacity: 0;
           display: none;
+          visibility: hidden;
+
+          .ant-radio-input {
+            display: none;
+
+          }
         }
 
         span:last-child {
@@ -48,6 +56,7 @@
         .relative {
           div:first-child {
             opacity: 0;
+            visibility: hidden;
           }
 
           .icon_check {
@@ -60,6 +69,7 @@
               width: 10px;
               height: 10px;
               opacity: 0;
+              visibility: hidden;
             }
           }
         }
@@ -68,12 +78,13 @@
           .relative {
             div:first-child {
               opacity: 1;
-
+              visibility: visible;
 
             }
 
             svg {
               opacity: 1;
+              visibility: visible;
             }
           }
         }
