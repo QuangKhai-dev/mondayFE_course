@@ -1,12 +1,12 @@
 import React from 'react';
 
-const IconBoard = () => {
+const IconBoard = ({ size = '19' }) => {
   return (
     <svg
       viewBox="0 0 20 20"
       fill="currentColor"
-      width="19"
-      height="19"
+      width={size}
+      height={size}
       aria-hidden="true"
       aria-label="Public board"
       class="icon_90dcd5fe7a"

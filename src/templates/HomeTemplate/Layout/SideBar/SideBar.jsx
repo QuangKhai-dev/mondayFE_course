@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, Button, Layout, Popover } from 'antd';
+import { Avatar, Button, Layout, Popover, Tooltip } from 'antd';
 import './sideBar.scss';
 import { NavLink } from 'react-router-dom';
 import IconHome from '../../../../Components/Icon/IconHome';
@@ -10,6 +10,7 @@ import ButtonCustom from '../../../../Components/Button/ButtonCustom';
 import BoardItem from '../../../../Components/BoardItem/BoardItem';
 import PopoverListWorkSpace from '../../../../Components/Popover/PopoverListWorkSpace';
 import PopoverSettingWorkSpace from '../../../../Components/Popover/PopoverSettingWorkSpace/PopoverSettingWorkSpace';
+import PopoverAddItemWorkSpace from '../../../../Components/Popover/PopoverAddItemWorkSpace/PopoverAddItemWorkSpace';
 const { Sider } = Layout;
 const content = (
   <div>
@@ -100,10 +101,20 @@ const SideBar = ({ collapsed, setCollapsed }) => {
         {/* input filter & button create board  */}
         <div className="flex justify-between space-x-2">
           <InputFilter className="w-10/12" />
-          <ButtonCustom
-            className="w-2/12 !px-2"
-            content={<i className="fa-solid fa-plus"></i>}
-          />
+          <Popover
+            overlayInnerStyle={{ padding: '0' }}
+            arrow={false}
+            content={<PopoverAddItemWorkSpace />}
+            trigger="click"
+            placement="rightBottom"
+          >
+            <Tooltip placement="top" title="Add item to workspace">
+              <ButtonCustom
+                className="w-2/12 !px-2"
+                content={<i className="fa-solid fa-plus"></i>}
+              />
+            </Tooltip>
+          </Popover>
         </div>
         {/* list board  */}
         <div className="space-y-2">

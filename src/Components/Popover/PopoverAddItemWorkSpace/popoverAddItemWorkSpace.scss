@@ -1,0 +1,49 @@
+.popover_add_item_workspace {
+  .ant-menu {
+    border-radius: 8px;
+
+    .ant-menu-item {
+      @apply flex items-center space-x-2;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 10px;
+      padding-inline-start: 10px !important;
+
+
+    }
+
+    .ant-menu-submenu-title {
+      @apply flex items-center space-x-2;
+      padding-inline-start: 10px !important;
+    }
+  }
+
+  svg {
+
+
+    path {
+      fill: #676879;
+    }
+  }
+}
+
+.ant-menu-submenu {
+  width: 280px;
+  padding-inline-end: 10px !important;
+
+  .ant-menu {
+    padding: 15px 0 !important;
+
+    .ant-menu-item {
+      height: 30px !important;
+
+      line-height: 30px;
+      display: flex !important;
+      align-items: center;
+
+      .ant-menu-item-icon {
+        text-align: center;
+      }
+    }
+  }
+}
