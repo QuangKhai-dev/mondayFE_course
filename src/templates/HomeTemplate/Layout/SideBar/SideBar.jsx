@@ -11,6 +11,7 @@ import BoardItem from '../../../../Components/BoardItem/BoardItem';
 import PopoverListWorkSpace from '../../../../Components/Popover/PopoverListWorkSpace';
 import PopoverSettingWorkSpace from '../../../../Components/Popover/PopoverSettingWorkSpace/PopoverSettingWorkSpace';
 import PopoverAddItemWorkSpace from '../../../../Components/Popover/PopoverAddItemWorkSpace/PopoverAddItemWorkSpace';
+import PopoverFilter from '../../../../Components/Popover/PopoverFilter/PopoverFilter';
 const { Sider } = Layout;
 const content = (
   <div>
@@ -100,7 +101,8 @@ const SideBar = ({ collapsed, setCollapsed }) => {
         </div>
         {/* input filter & button create board  */}
         <div className="flex justify-between space-x-2">
-          <InputFilter className="w-10/12" />
+          <InputFilter popoverContent={<PopoverFilter />} className="w-10/12" />
+
           <Popover
             overlayInnerStyle={{ padding: '0' }}
             arrow={false}

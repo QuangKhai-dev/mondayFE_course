@@ -1,0 +1,10 @@
+.popover_filter {
+  .ant-menu {
+    border-inline-end: 0px !important;
+
+    .ant-checkbox-group {
+      flex-direction: column;
+      @apply space-y-2;
+    }
+  }
+}
