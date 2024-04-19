@@ -8,8 +8,9 @@ import {
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import SideBar from './Layout/SideBar/SideBar';
+import Header from './Layout/Header/Header';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
   return {
     key,
@@ -44,12 +45,7 @@ const HomeTemplate = () => {
         backgroundColor: '#ECEFF8',
       }}
     >
-      <Header
-        style={{
-          padding: 0,
-          background: '#ECEFF8',
-        }}
-      />
+      <Header />
 
       <Layout style={{ background: '#ECEFF8' }}>
         <SideBar collapsed={collapsed} setCollapsed={setCollapsed} />
