@@ -154,11 +154,7 @@ const PopoverAddItemWorkSpace = () => {
   ];
   return (
     <div className="popover_add_item_workspace">
-      <Menu
-        defaultOpenKeys={['1', 'a']}
-        mode="vertical"
-        items={arrSettingWorkSpace}
-      />
+      <Menu mode="vertical" items={arrSettingWorkSpace} />
     </div>
   );
 };

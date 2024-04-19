@@ -67,11 +67,7 @@ const PopoverFilter = () => {
   ];
   return (
     <div className="popover_filter">
-      <Menu
-        defaultOpenKeys={['1', 'a']}
-        mode="vertical"
-        items={arrSettingWorkSpace}
-      />
+      <Menu mode="vertical" items={arrSettingWorkSpace} />
     </div>
   );
 };

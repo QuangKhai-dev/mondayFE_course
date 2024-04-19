@@ -184,7 +184,7 @@ const PopoverSettingWorkSpace = () => {
   return (
     <div className="popover_setting_workspace">
       <Menu
-        defaultOpenKeys={['1', 'a']}
+       
         mode="vertical"
         items={arrSettingWorkSpace}
       />

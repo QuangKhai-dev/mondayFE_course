@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import IconBoard from '../Icon/IconBoard';
 import { Popover } from 'antd';
-const content = (
-  <div>
-    <p>Content</p>
-    <p>Content</p>
-  </div>
-);
+import PopoverBoardItem from '../Popover/PopoverBoardItem/PopoverBoardItem';
+
 const BoardItem = () => {
   const [active, setActive] = useState(false);
   return (
@@ -30,9 +26,10 @@ const BoardItem = () => {
       <div>
         <Popover
           open={active}
-          content={content}
-          title="Title"
+          content={<PopoverBoardItem />}
           trigger={['click']}
+          placement="bottomRight"
+          arrow={false}
         >
           <button
             onClick={() => {
