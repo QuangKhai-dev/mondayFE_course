@@ -8,6 +8,7 @@ import IconInviteMember from '../../../../Components/Icon/IconInviteMember';
 import IconApp from '../../../../Components/Icon/IconApp';
 import IconSearch from '../../../../Components/Icon/IconSearch';
 import IconHelp from '../../../../Components/Icon/IconHelp';
+import ButtonTooltip from '../../../../Components/Button/ButtonTooltip';
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,29 +40,35 @@ const Header = () => {
         <div className="header_action">
           <div className="border-r border-gray-300 pr-2">
             {/* notification */}
-            <button onClick={showDrawer}>
-              <IconNotification />
-            </button>
+
+            <ButtonTooltip
+              onClick={showDrawer}
+              content={<IconNotification />}
+              tooltipContent={'Notifications'}
+            />
             {/* update feed  */}
-            <button onClick={showModal}>
-              <IconUpdateFeed />
-            </button>
+            <ButtonTooltip
+              onClick={showModal}
+              content={<IconUpdateFeed />}
+              tooltipContent={'Update feed'}
+            />
             {/* invite member  */}
-            <button>
-              <IconInviteMember />
-            </button>
+            <ButtonTooltip
+              content={<IconInviteMember />}
+              tooltipContent={'Invite members'}
+            />
             {/* marketplace  */}
-            <button>
-              <IconApp />
-            </button>
+            <ButtonTooltip
+              content={<IconApp />}
+              tooltipContent={'monday marketplace'}
+            />
           </div>
           {/* search  */}
-          <button>
-            <IconSearch />
-          </button>
-          <button>
-            <IconHelp />
-          </button>
+          <ButtonTooltip
+            content={<IconSearch />}
+            tooltipContent={'Search everything'}
+          />
+          <ButtonTooltip content={<IconHelp />} tooltipContent={'Help'} />
           {/* info user  */}
           <div className="flex items-center bg-gray-100 px-2 pr-8  py-1 relative">
             <img width={20} src="./public/logoMonday.png" alt="" />
