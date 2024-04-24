@@ -1,6 +1,15 @@
 .side_bar {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+
+
+  &.ant-layout-sider-collapsed {
+    .ant-layout-sider-children {
+      margin-right: 30px;
+      overflow: hidden;
+    }
+  }
+
   .ant-layout-sider-trigger {
     position: absolute;
     top: 0;
