@@ -8,7 +8,7 @@ import LayoutSelectViewBoard from '../../layout/LayoutSelectViewBoard/LayoutSele
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
 
-  const [arrColumn, setArrColumn] = useState(['Status']);
+  const [arrColumn, setArrColumn] = useState(['Status', 'Owner', 'Due Date']);
   const handleStep = number => {
     // -1
     // 1

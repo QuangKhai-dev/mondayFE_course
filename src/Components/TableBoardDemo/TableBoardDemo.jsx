@@ -1,12 +1,29 @@
 import { Table } from 'antd';
 import React from 'react';
 import './tableBoardDemo.scss';
-const TableBoardDemo = ({ className }) => {
+const TableBoardDemo = ({ className, arrColumn }) => {
   let shapeObject = 'bg-gray-300 w-full h-1 rounded-md';
+  const columnTable = arrColumn.map((item, index) => {
+    return {
+      title: item,
+      dataIndex: item.toLowerCase(),
+      render: () => {},
+    };
+  });
+  columnTable.unshift({
+    title: 'Task',
+    dataIndex: 'task',
+    width: '170px',
+  });
   let columns = [
     {
       title: 'Task',
       dataIndex: 'task',
+      width: '170px',
+    },
+    {
+      title: 'Owner',
+      dataIndex: 'owner',
     },
     {
       title: 'Owner',
@@ -32,7 +49,7 @@ const TableBoardDemo = ({ className }) => {
       <Table
         className={className}
         pagination={false}
-        columns={columns}
+        columns={columnTable}
         dataSource={data}
       />
     </div>
