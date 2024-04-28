@@ -168,7 +168,7 @@ const TableBoardDemo = ({ className, arrColumn, data }) => {
         columns={columnTable}
         dataSource={data}
         locale={{ emptyText: ' ' }}
-        summary={() => <div>+ Add project</div>}
+        summary={() => <div className="table_footer">+ Add project</div>}
       />
     </div>
   );

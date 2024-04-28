@@ -44,7 +44,10 @@ const LayoutViewBoardDemo = ({ arrColumn }) => {
       {/* table 1  */}
       <TableBoardDemo arrColumn={arrColumn} data={dataColumnDemo} />
       {/* table 2  */}
-      <TableBoardDemo arrColumn={arrColumn} className="border_board_green" />
+      <TableBoardDemo
+        arrColumn={arrColumn}
+        className="border_board_green mt-10"
+      />
     </div>
   );
 };
