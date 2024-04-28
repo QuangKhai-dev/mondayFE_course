@@ -4,7 +4,7 @@ import './tableBoardDemo.scss';
 import { getFirstCharacter } from '../../util/util';
 import IconUser from '../Icon/IconUser';
 import { dataColumnDemo } from '../../data/data';
-const TableBoardDemo = ({ className, arrColumn }) => {
+const TableBoardDemo = ({ className, arrColumn, data }) => {
   const arrColorStatus = ['#FDAB3D', '#00C875', '#DF2E49'];
   const arrColorPriority = ['#579BFC', '#401694', '#5559DF'];
   const columnTable = arrColumn.map(item => {
@@ -166,7 +166,9 @@ const TableBoardDemo = ({ className, arrColumn }) => {
         className={className}
         pagination={false}
         columns={columnTable}
-        dataSource={dataColumnDemo}
+        dataSource={data}
+        locale={{ emptyText: ' ' }}
+        summary={() => <div>+ Add project</div>}
       />
     </div>
   );

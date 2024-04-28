@@ -3,6 +3,7 @@ import React from 'react';
 import './layoutViewBoardDemo.scss';
 import TableBoardDemo from '../../Components/TableBoardDemo/TableBoardDemo';
 import { useSelector } from 'react-redux';
+import { dataColumnDemo } from '../../data/data';
 const LayoutViewBoardDemo = ({ arrColumn }) => {
   const { board } = useSelector(state => state.createBoardSlice);
   const data = [
@@ -41,9 +42,9 @@ const LayoutViewBoardDemo = ({ arrColumn }) => {
         )}
       </div>
       {/* table 1  */}
-      <TableBoardDemo arrColumn={arrColumn} />
+      <TableBoardDemo arrColumn={arrColumn} data={dataColumnDemo} />
       {/* table 2  */}
-      {/* <TableBoardDemo data={data} className="border_board_green" /> */}
+      <TableBoardDemo arrColumn={arrColumn} className="border_board_green" />
     </div>
   );
 };
