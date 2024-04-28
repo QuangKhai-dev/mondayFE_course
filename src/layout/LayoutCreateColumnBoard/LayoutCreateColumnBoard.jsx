@@ -116,6 +116,7 @@ const LayoutCreateColumnBoard = ({ handleChangeArrColumn, arrColumn }) => {
           onChange={handleChangeArrColumn}
           defaultValue={arrColumn}
           options={options}
+          value={arrColumn}
         />
       </div>
     </div>

@@ -5,10 +5,11 @@ import logoMiniCreateBoard from './../../assets/img/logoMiniCreateBoard.png';
 import LayoutViewBoardDemo from '../../layout/LayoutViewBoardDemo/LayoutViewBoardDemo';
 import ButtonCustom from '../../Components/Button/ButtonCustom';
 import LayoutSelectViewBoard from '../../layout/LayoutSelectViewBoard/LayoutSelectViewBoard';
+import { adjustArray } from '../../util/util';
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
 
-  const [arrColumn, setArrColumn] = useState(['Status', 'Owner', 'Due Date']);
+  const [arrColumn, setArrColumn] = useState(['Owner', 'Status', 'Due Date']);
   const handleStep = number => {
     // -1
     // 1
@@ -17,7 +18,10 @@ const CreateBoardTemplate = () => {
 
   // handleChangeArrColumn
   const handleChangeArrColumn = checkedValue => {
-    setArrColumn(checkedValue);
+    console.log(checkedValue);
+    const result = adjustArray(arrColumn, checkedValue);
+    console.log(result);
+    setArrColumn(result);
   };
 
   const renderCreateBoard = () => {
