@@ -34,3 +34,15 @@ export const convertDateAndMonth = (date, month) => {
   });
   return newDate + ' ' + newMonth;
 };
+
+export function getTodayAndTomorrow(now) {
+  const tomorrow = new Date(now);
+  tomorrow.setDate(now.getDate() + 1);
+
+  const options = { day: 'numeric', month: 'short' };
+
+  const todayString = now.toLocaleString('en-US', options);
+  const tomorrowString = tomorrow.toLocaleString('en-US', options);
+
+  return `${todayString}-${tomorrowString}`;
+}

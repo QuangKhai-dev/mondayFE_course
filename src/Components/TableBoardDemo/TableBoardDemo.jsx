@@ -1,11 +1,12 @@
 import { Avatar, Table } from 'antd';
 import React from 'react';
 import './tableBoardDemo.scss';
-import { convertDateAndMonth, getFirstCharacter } from '../../util/util';
+import { getFirstCharacter } from '../../util/util';
 import IconUser from '../Icon/IconUser';
+import { dataColumnDemo } from '../../data/data';
 const TableBoardDemo = ({ className, arrColumn }) => {
-  const now = new Date();
   const arrColorStatus = ['#FDAB3D', '#00C875', '#DF2E49'];
+  const arrColorPriority = ['#579BFC', '#401694', '#5559DF'];
   const columnTable = arrColumn.map(item => {
     switch (item.toLowerCase()) {
       case 'owner':
@@ -67,6 +68,85 @@ const TableBoardDemo = ({ className, arrColumn }) => {
             );
           },
         };
+      case 'priority':
+        return {
+          title: item,
+          dataIndex: item.toLowerCase(),
+          render: (text, record, index) => {
+            return (
+              <div
+                style={{
+                  backgroundColor:
+                    arrColorPriority[index % arrColorPriority.length],
+                }}
+                className="text-white absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center"
+              >
+                {text}
+              </div>
+            );
+          },
+        };
+      case 'budget':
+        return {
+          title: item,
+          dataIndex: item.toLowerCase(),
+          render: text => {
+            return `$ ${text.toLocaleString('en-US')}`;
+          },
+        };
+      case 'files':
+        return '';
+      case 'time line':
+        return {
+          title: item,
+          dataIndex: item.toLowerCase().split(' ').join(''),
+          render: (text, record, index) => {
+            return index !== 1 ? (
+              <div className="relative left-1/2 -translate-x-1/2 w-32 bg-red-500  flex items-center justify-between text-white px-4 text-xs rounded-3xl py-0.5">
+                <i className="fa-solid fa-exclamation text-sm"></i>
+                {text}
+              </div>
+            ) : (
+              <div className="relative left-1/2 -translate-x-1/2 w-32 bg-green-500  flex items-center justify-between text-white px-4 text-xs rounded-3xl py-0.5">
+                <i className="fa-solid fa-check"></i>
+                {text}
+              </div>
+            );
+          },
+          width: '150px',
+        };
+      case 'last update':
+        return {
+          title: item,
+          dataIndex: item.toLowerCase().split(' ').join(''),
+          render: (text, record) => {
+            return (
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-around w-32">
+                {text ? (
+                  <>
+                    <Avatar
+                      style={{
+                        backgroundColor: 'orange',
+                        color: 'white',
+                        width: 25,
+                        height: 25,
+                        fontSize: '12px',
+                      }}
+                    >
+                      {getFirstCharacter(record.owner)}
+                    </Avatar>
+                    <span>{text}</span>
+                  </>
+                ) : (
+                  <>
+                    <IconUser size={'25px'} />
+                    <div className="py-2 px-8 rounded-3xl bg-gray-200"></div>
+                  </>
+                )}
+              </div>
+            );
+          },
+        };
       default:
         return {
           title: item,
@@ -80,42 +160,13 @@ const TableBoardDemo = ({ className, arrColumn }) => {
     width: '170px',
   });
 
-  const data = [
-    {
-      task: 'Task 1',
-      owner: 'Quang Khải',
-      status: 'Working on it',
-      duedate: convertDateAndMonth(now, now),
-      notes: 'Action items',
-    },
-    {
-      task: 'Task 2',
-      owner: '',
-      status: 'Done',
-      duedate: convertDateAndMonth(
-        new Date(new Date().setDate(new Date().getDate() + 1)),
-        new Date(new Date().setDate(new Date().getDate() + 1))
-      ),
-      notes: 'Meeting notes',
-    },
-    {
-      task: 'Task 3',
-      owner: '',
-      status: 'Stuck',
-      duedate: convertDateAndMonth(
-        new Date(new Date().setDate(new Date().getDate() + 2)),
-        new Date(new Date().setDate(new Date().getDate() + 2))
-      ),
-      notes: 'Other',
-    },
-  ];
   return (
     <div className="board_demo_table">
       <Table
         className={className}
         pagination={false}
         columns={columnTable}
-        dataSource={data}
+        dataSource={dataColumnDemo}
       />
     </div>
   );
