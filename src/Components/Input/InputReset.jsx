@@ -1,8 +1,16 @@
 import React from 'react';
 
-const InputReset = ({ placeholder, handleChange, handleClick, value }) => {
+const InputReset = ({
+  placeholder,
+  handleChange,
+  handleClick,
+  value,
+  marginBottom = 'mb-10',
+}) => {
   return (
-    <div className="px-5 py-2 border border-gray-300 rounded relative hover:border-black duration-500 mb-10">
+    <div
+      className={`px-5 py-2 border border-gray-300 rounded relative hover:border-black duration-500 ${marginBottom}`}
+    >
       <input
         className="focus:outline-none text-sm w-full"
         type="text"

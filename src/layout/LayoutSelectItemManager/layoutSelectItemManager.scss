@@ -1,0 +1,12 @@
+.layout_select_item_manager {
+  @apply w-full;
+
+  .ant-radio-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+  }
+}

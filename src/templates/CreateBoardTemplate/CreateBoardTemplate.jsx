@@ -6,6 +6,7 @@ import LayoutViewBoardDemo from '../../layout/LayoutViewBoardDemo/LayoutViewBoar
 import ButtonCustom from '../../Components/Button/ButtonCustom';
 import LayoutSelectViewBoard from '../../layout/LayoutSelectViewBoard/LayoutSelectViewBoard';
 import { adjustArray } from '../../util/util';
+import LayoutSelectItemManager from '../../layout/LayoutSelectItemManager/LayoutSelectItemManager';
 const CreateBoardTemplate = () => {
   const [step, setStep] = useState(0);
 
@@ -31,12 +32,7 @@ const CreateBoardTemplate = () => {
       // case 1:
       //   <div></div>;
       case 0:
-        return (
-          <LayoutCreateColumnBoard
-            handleChangeArrColumn={handleChangeArrColumn}
-            arrColumn={arrColumn}
-          />
-        );
+        return <LayoutSelectItemManager />;
       // case 0:
       //   return <LayoutSelectViewBoard />;
     }
